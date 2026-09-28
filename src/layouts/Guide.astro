@@ -1,0 +1,41 @@
+---
+import Base from './Base.astro';
+import SignupCTA from '../components/SignupCTA.astro';
+import { formatDate } from '../lib/date';
+
+const { frontmatter } = Astro.props;
+---
+
+<Base title={frontmatter.title} description={frontmatter.description}>
+  <article>
+    <p class="meta"><a href="/guides/">&larr; All guides</a></p>
+    <h1>{frontmatter.title}</h1>
+    <p class="meta">Last updated {formatDate(frontmatter.updated)}</p>
+
+    {
+      frontmatter.tldr && (
+        <aside class="tldr" aria-label="Summary">
+          <h2>TL;DR</h2>
+          <ul>
+            {frontmatter.tldr.map((item: string) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+
+    <slot />
+
+    <section class="forward">
+      <h2>Know someone this would help?</h2>
+      <p>
+        Most people never think about this stuff until something goes wrong.
+        Forward this page to a parent, grandparent, or friend &mdash; it takes
+        ten seconds and might save them a very bad day.
+      </p>
+    </section>
+
+    <SignupCTA />
+  </article>
+</Base>

@@ -1,0 +1,13 @@
+---
+import { SITE_NAME, SUBSTACK_URL } from '../config';
+---
+
+<footer>
+  <div class="inner">
+    <span>&copy; {new Date().getFullYear()} {SITE_NAME}</span>
+    <span>
+      <a href={SUBSTACK_URL}>Newsletter</a> &middot;{' '}
+      <a href="/about/">About</a>
+    </span>
+  </div>
+</footer>

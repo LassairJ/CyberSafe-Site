@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import { formatDate } from '../../lib/date';
+
+const guides = Object.entries(import.meta.glob('./*.md', { eager: true }))
+  .map(([path, mod]: [string, any]) => ({
+    url: '/guides/' + path.replace('./', '').replace(/\.md$/, '/'),
+    title: mod.frontmatter.title,
+    description: mod.frontmatter.description,
+    updated: mod.frontmatter.updated,
+  }))
+  .sort((a, b) => (b.updated ?? '').localeCompare(a.updated ?? ''));
+---
+
+<Base
+  title="Guides"
+  description="Plain-English cybersecurity guides you can actually follow — and share with your family."
+>
+  <h1>Guides</h1>
+  <p>
+    Short, practical guides on the security topics that matter most. Every one
+    is written to be forwarded &mdash; send them to the people in your life
+    who need them.
+  </p>
+  <ul class="cards">
+    {
+      guides.map((g) => (
+        <li>
+          <a href={g.url}>{g.title}</a>
+          <p>{g.description}</p>
+          <p class="meta">Updated {formatDate(g.updated)}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

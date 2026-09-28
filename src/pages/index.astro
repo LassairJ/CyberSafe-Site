@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import SignupCTA from '../components/SignupCTA.astro';
+import { formatDate } from '../lib/date';
+import { SITE_TAGLINE } from '../config';
+
+type Entry = {
+  url: string;
+  title: string;
+  description: string;
+  updated?: string;
+  date?: string;
+};
+
+const guides: Entry[] = Object.entries(
+  import.meta.glob('./guides/*.md', { eager: true }),
+)
+  .map(([path, mod]: [string, any]) => ({
+    url: path.replace('./', '/').replace(/\.md$/, '/'),
+    title: mod.frontmatter.title,
+    description: mod.frontmatter.description,
+    updated: mod.frontmatter.updated,
+  }))
+  .sort((a, b) => (b.updated ?? '').localeCompare(a.updated ?? ''));
+
+const issues: Entry[] = Object.entries(
+  import.meta.glob('./archive/*.md', { eager: true }),
+)
+  .map(([path, mod]: [string, any]) => ({
+    url: path.replace('./', '/').replace(/\.md$/, '/'),
+    title: mod.frontmatter.title,
+    description: mod.frontmatter.description,
+    date: mod.frontmatter.date,
+  }))
+  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
+  .slice(0, 3);
+
+const featured = guides.slice(0, 3);
+---
+
+<Base description={SITE_TAGLINE}>
+  <section class="hero">
+    <h1>CyberSafe Brief</h1>
+    <p class="tagline">{SITE_TAGLINE}</p>
+    <p>
+      No jargon, no fear-mongering &mdash; just the security advice that
+      actually matters for everyday people, plus plain-English guides you can
+      share with your family.
+    </p>
+  </section>
+
+  <section>
+    <h2>Featured guides</h2>
+    <ul class="cards">
+      {
+        featured.map((g) => (
+          <li>
+            <a href={g.url}>{g.title}</a>
+            <p>{g.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <p><a href="/guides/">All guides &rarr;</a></p>
+  </section>
+
+  <section>
+    <h2>Latest issues</h2>
+    <ul class="plain">
+      {
+        issues.map((i) => (
+          <li>
+            <a href={i.url}>{i.title}</a>
+            <span class="meta">{formatDate(i.date)}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <p><a href="/archive/">Full archive &rarr;</a></p>
+  </section>
+
+  <SignupCTA />
+</Base>

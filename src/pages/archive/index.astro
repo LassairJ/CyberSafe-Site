@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import { formatDate } from '../../lib/date';
+
+const issues = Object.entries(import.meta.glob('./*.md', { eager: true }))
+  .map(([path, mod]: [string, any]) => ({
+    url: '/archive/' + path.replace('./', '').replace(/\.md$/, '/'),
+    title: mod.frontmatter.title,
+    description: mod.frontmatter.description,
+    date: mod.frontmatter.date,
+  }))
+  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+---
+
+<Base
+  title="Newsletter archive"
+  description="Every issue of the CyberSafe Brief, mirrored here for easy reading and sharing."
+>
+  <h1>Newsletter archive</h1>
+  <p>
+    Every issue of the CyberSafe Brief, mirrored here so they're easy to find,
+    read, and share long after they hit inboxes.
+  </p>
+  <ul class="plain">
+    {
+      issues.map((i) => (
+        <li>
+          <a href={i.url}>{i.title}</a>
+          <span class="meta">
+            {formatDate(i.date)}
+            {i.description ? ` — ${i.description}` : ''}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

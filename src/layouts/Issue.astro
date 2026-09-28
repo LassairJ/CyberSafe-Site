@@ -1,0 +1,19 @@
+---
+import Base from './Base.astro';
+import SignupCTA from '../components/SignupCTA.astro';
+import { formatDate } from '../lib/date';
+
+const { frontmatter } = Astro.props;
+---
+
+<Base title={frontmatter.title} description={frontmatter.description}>
+  <article>
+    <p class="meta"><a href="/archive/">&larr; All issues</a></p>
+    <h1>{frontmatter.title}</h1>
+    <p class="meta">Originally sent {formatDate(frontmatter.date)}</p>
+
+    <slot />
+
+    <SignupCTA />
+  </article>
+</Base>
