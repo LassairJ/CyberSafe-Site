@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Issue.astro
-title: "When "Free" Browser Tools Read Your AI Chats"
+title: 'When "Free" Browser Tools Read Your AI Chats'
 description: A popular VPN extension quietly watched millions of conversations with AI tools.
 date: 2025-12-19
 image: /ai-extension-snooping.jpg
