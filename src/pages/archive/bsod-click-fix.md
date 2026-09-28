@@ -2,7 +2,7 @@
 layout: ../../layouts/Issue.astro
 title: "Fake Blue Screens, Real Malware"
 description: Attackers are using realistic Windows crash screens to trick people into infecting their own computers.
-date: 2026-04-03
+date: 2026-01-09
 image: /bsod-click-fix.jpg
 ---
 
