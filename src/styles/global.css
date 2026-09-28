@@ -181,6 +181,11 @@ ul.plain a {
   text-decoration: none;
 }
 
+ul.plain .meta {
+  display: block;
+  margin-top: 0.35rem;
+}
+
 .signup {
   background: var(--surface);
   border: 1px solid var(--border);

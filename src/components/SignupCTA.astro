@@ -1,12 +1,9 @@
 ---
-import { SUBSTACK_URL } from '../config';
+import { SUBSTACK_URL, CTA_COPY } from '../config';
 ---
 
 <section class="signup">
-  <h2>Get the CyberSafe Brief in your inbox</h2>
-  <p>
-    Short, jargon-free security tips for everyday people. Free, roughly
-    biweekly, no spam ever.
-  </p>
-  <a class="button" href={SUBSTACK_URL}>Subscribe free</a>
+  <h2>{CTA_COPY.signupHeading}</h2>
+  <p>{CTA_COPY.signupText}</p>
+  <a class="button" href={SUBSTACK_URL}>{CTA_COPY.signupButton}</a>
 </section>
