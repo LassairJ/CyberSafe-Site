@@ -11,6 +11,7 @@ date: 2026-04-03
 - [Windows and Edge](https://thehackernews.com/2026/03/microsoft-patches-84-flaws-in-march.html): Microsoft patched 84 vulnerabilities, including 8 critical flaws that could allow serious system compromise.
 - [Chrome](https://www.bleepingcomputer.com/news/security/google-fixes-fourth-chrome-zero-day-exploited-in-attacks-in-2026/): Google fixed multiple zero-day vulnerabilities that were actively exploited. These flaws could allow attackers to create malicious websites that run code on your device.
 
+![A dark sword piercing through a phone](../../../public/darksword.jpg)
 
 ## DarkSword iPhone Exploit Used in the Wild
 A powerful exploit toolkit called **DarkSword**, once mainly used by nation-state hackers and surveillance firms, has now been seen in broader attacks by smaller, financially-motivated threat groups.  
