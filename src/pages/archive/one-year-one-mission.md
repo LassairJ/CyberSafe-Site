@@ -3,12 +3,12 @@ layout: ../../layouts/Issue.astro
 title: "This Year in Cyber"
 description: Recapping the first year of the CyberSafe Brief, and challenging you with three quick wins.
 date: 2026-02-13
-image: /cargurus.jpg
+image: /one-year-one-mission.png
 ---
 
 
 
-![The CyberSafe Brief logo.](../../../public/one-year-one-mission.jpg)
+![The CyberSafe Brief logo.](../../../public/one-year-one-mission.png)
 
 One year ago yesterday, I hit “publish” on the very first edition of The CyberSafe Brief.
 
