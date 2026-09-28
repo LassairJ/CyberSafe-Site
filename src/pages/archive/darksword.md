@@ -3,6 +3,7 @@ layout: ../../layouts/Issue.astro
 title: "Government-Backed Hacking Tool Used Against Civilian iPhones"
 description: A powerful zero-click toolkit once limited to elite hackers is now being used more widely.
 date: 2026-04-03
+image: /darksword.jpg
 ---
 
 **TLDR**: A dangerous iPhone exploit called DarkSword can steal data without any user action and has spread beyond nation-state actors. Apple is rolling out fixes, so update your devices immediately. Also, major updates for Windows, Edge, and Chrome patch dozens of serious vulnerabilities, including actively exploited zero-days.

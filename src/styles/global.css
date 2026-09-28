@@ -186,6 +186,22 @@ ul.plain .meta {
   margin-top: 0.35rem;
 }
 
+.archive-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.archive-thumb {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--surface);
+}
+
 .signup {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -293,5 +309,10 @@ input[type='checkbox'] {
 
   .tldr {
     padding: 0.85rem 1rem;
+  }
+
+  .archive-thumb {
+    width: 72px;
+    height: 54px;
   }
 }

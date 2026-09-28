@@ -8,6 +8,7 @@ const issues = Object.entries(import.meta.glob('./*.md', { eager: true }))
     title: mod.frontmatter.title,
     description: mod.frontmatter.description,
     date: mod.frontmatter.date,
+    image: mod.frontmatter.image,
   }))
   .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
 ---
@@ -21,15 +22,25 @@ const issues = Object.entries(import.meta.glob('./*.md', { eager: true }))
     Every issue of the CyberSafe Brief, mirrored here so they're easy to find,
     read, and share long after they hit inboxes.
   </p>
-  <ul class="plain">
+  <ul class="plain archive-list">
     {
       issues.map((i) => (
         <li>
-          <a href={i.url}>{i.title}</a>
-          <span class="meta">
-            {formatDate(i.date)}
-            {i.description ? ` — ${i.description}` : ''}
-          </span>
+          <img
+            class="archive-thumb"
+            src={i.image || '/logo.png'}
+            alt=""
+            width="96"
+            height="72"
+            loading="lazy"
+          />
+          <div>
+            <a href={i.url}>{i.title}</a>
+            <span class="meta">
+              {formatDate(i.date)}
+              {i.description ? ` — ${i.description}` : ''}
+            </span>
+          </div>
         </li>
       ))
     }
