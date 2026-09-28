@@ -12,11 +12,11 @@ export const CTA_COPY = {
   // Inline signup box (bottom of guides, issues, and the homepage).
   signupHeading: 'Get the CyberSafe Brief in your inbox',
   signupText:
-    'Short, jargon-free security tips and news for everyday people. Free, bite-sized, no spam ever.',
+    'Short, jargon-free security tips for everyday people. Free, roughly biweekly, no spam ever.',
   signupButton: 'Subscribe free',
   // Homepage popup.
   popupHeading: "Don't miss the next issue",
   popupText:
-    'Plain-English security tips and news in your inbox. Free, bite-sized, unsubscribe anytime.',
+    'Plain-English security tips in your inbox. Free, roughly biweekly, unsubscribe anytime.',
   popupFallback: 'Prefer Substack? Subscribe there instead',
 };

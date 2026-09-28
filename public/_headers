@@ -1,0 +1,9 @@
+# Security headers for Cloudflare Pages. If you change SUBSTACK_URL in
+# src/config.ts, update the substack.com entries in the CSP below to match.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://cybersafebrief.substack.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'
